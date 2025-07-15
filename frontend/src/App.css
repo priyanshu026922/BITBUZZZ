@@ -1,0 +1,19 @@
+.App{
+  min-height:100vh ;
+  background-image:url('./assets/bgdesign.png');
+  background-size:cover;
+}
+
+/* Make a thin, styled scrollbar */
+/* ::-webkit-scrollbar {
+  width: 5px;
+}
+
+::-webkit-scrollbar-thumb {
+  background: rgba(136, 136, 136, 0.4);
+  border-radius: 10px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: #555;
+} */
