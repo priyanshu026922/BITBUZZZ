@@ -21,7 +21,7 @@ import UserBadgeItem from '../components/UserAvatar/UserBadgeItem'
 import { ViewIcon } from '@chakra-ui/icons'
 import axios from 'axios'
 import UserListItem from '../components/UserAvatar/userListItem'
-const UpdategroupChat = ({fetchAgain,setFetchAgain}) => {
+const UpdategroupChat = ({fetchAgain,setFetchAgain,fetchmessage}) => {
     
       const { isOpen, onOpen, onClose } = useDisclosure();
       const {selectedChat,setSelectedChat,user}=ChatState();
@@ -61,6 +61,7 @@ const UpdategroupChat = ({fetchAgain,setFetchAgain}) => {
 
         User._id===user._id?setSelectedChat(""):setSelectedChat(data);
         setFetchAgain(prev=>!prev);
+        fetchmessage();
           setLoading(false);
        }catch(e){
            toast({

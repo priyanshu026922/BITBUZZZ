@@ -5,18 +5,20 @@ import SingleChat from './SingleChat';
 const ChatSection = ({fetchAgain,setFetchAgain}) => {
   const {selectedChat}=ChatState();
   return (
-  <Box display={{base:selectedChat?"flex":"none",md:"flex"}}
-  alignItems={"center"}
-  flexDir={"column"}
+ <Box
+  display={{ base: selectedChat ? "flex" : "none", md: "flex" }}
+  alignItems="center"
+  flexDir="column"
   p={3}
-  background={"white"}
-  w={{base:"100%",md:"68%"}}
-  borderRadius={"lg"}
-  borderWidth={"1px"}
-  height="100vh" 
-  >
-   <SingleChat  fetchAgain={fetchAgain} setFetchAgain={setFetchAgain} />
-  </Box>
+  bg="white"
+  w={{ base: "100%", md: "68%" }}
+  borderRadius="lg"
+  borderWidth="1px"
+  height="100%"
+>
+  <SingleChat fetchAgain={fetchAgain} setFetchAgain={setFetchAgain} />
+</Box>
+
   )
 }
 

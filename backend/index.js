@@ -19,4 +19,22 @@ app.use('/api/message',messageRoutes);
 app.use(notFound);
 app.use(errorHandler);
 const PORT=process.env.PORT||3000
-app.listen(PORT)
+const server=app.listen(PORT,()=>{
+    console.log("running")
+})
+
+const io=require("socket.io")(server,{
+    pingTimeout:50000,
+    cors:{
+        origin:"http://localhost:5000"
+    },
+});
+
+io.on("connection",(socket)=>{
+  console.log("connected")
+  socket.on('setup',(userData)=>{
+    socket.join(userData._id);
+    console.log(userData._id)
+    socket.emit('connected');
+  })
+}); 
